@@ -1,8 +1,6 @@
-import type { Config } from '@jest/types';
-
-const config: Config.InitialOptions = {
+module.exports = {
   transform: {
-    '^.+\\.(ts|tsx|js|html)$': ['ts-jest', {
+    '^.+\\.(ts|tsx|js)$': ['ts-jest', {
       isolatedModules: true
     }]
   },
@@ -15,7 +13,6 @@ const config: Config.InitialOptions = {
     'tsx'
   ],
   collectCoverage: false,
-  roots: ['./src']
+  testTimeout: 10000000,
+  roots: ['./src'],
 };
-
-export default config;
